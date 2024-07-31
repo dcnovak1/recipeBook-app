@@ -19,6 +19,10 @@
     display: inline-block;
 }
 
+.card:hover{
+  border: 5px solid #c6711c;
+}
+
 .CardContainer{
     background-color: #333;
     size: 100px;

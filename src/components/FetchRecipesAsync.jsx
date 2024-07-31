@@ -5,8 +5,9 @@ import Card from './Card';
 
 const BASE_URL = "https://localhost:5401/api/recipe?pagesize=10&pagenumber=0";
 
-const FetchRecipesAsync = () =>{
-  
+const FetchRecipesAsync = (props) =>{
+
+
   const [myData, setMyData] = useState([]);
 
   
@@ -33,7 +34,7 @@ const FetchRecipesAsync = () =>{
 
   return(
     <main className='RecipesContainer'>
-      {myData.map((data, index) => <div key={index} className='CardContainer'><Card id={data.id} title={data.title} description={data.title} image='https://via.placeholder.com/150'/></div>)}
+      {myData.map((data, index) => <div key={index} className='CardContainer'><Card function={props.function} id={data.id} title={data.title} description={data.description} image='https://via.placeholder.com/150'/></div>)}
     </main>
   );
 }

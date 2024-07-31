@@ -7,13 +7,16 @@ import FetchRecipesAsync from "./components/FetchRecipesAsync";
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import CreatePage from "./components/CreatePage";
+import { ViewCardFull } from "./components/ViewCardFull";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 
 function App(){
 
-  var state = 1;
   const  [viewState, setViewState] =  useState(0);
+
+
+
 
   return(
     <div>
@@ -26,8 +29,9 @@ function App(){
           <a className="active" href="#home">Recipe Book</a>
         </div> 
         <div className="mainContainer">
-          {(viewState == 0)?<FetchRecipesAsync/>:<></>}
+          {(viewState == 0)?<FetchRecipesAsync function={setViewState}/>:<></>}
           {(viewState == 1)?<CreatePage/>:<></>}
+          {(viewState == 3)?<ViewCardFull/>:<></>}
         </div>
         
     </div>
