@@ -1,5 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
+import { myConfig } from '../Config'
+
 
 class RecipeToSave{
     constructor(id, title, description, ingredients, instructions){
@@ -102,7 +104,7 @@ function postRecipe(recipe){
 
     try{
         // Send data to the backend via POST
-        fetch('https://localhost:5401/api/recipe', {  // Enter your IP address here
+        fetch(`${myConfig.apiBaseUrl}`, {  // Enter your IP address here
 
             method: 'POST', 
             mode: 'cors',

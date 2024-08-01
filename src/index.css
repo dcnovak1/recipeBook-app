@@ -131,3 +131,131 @@
   .recipeFull-description{
     text-align: center;
   }
+
+  .ingredients-list{
+    padding-bottom: 10px;
+  }
+
+  .ingredient-label{
+    padding: 5px;
+    font-size: 17px; 
+    color: rgb(178, 178, 178);
+    
+  }
+
+  .ingredient-list-quantity{
+    width: 30px;
+    text-align: center;
+    background-color: #414141;
+    border-color: gray;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px; 
+  }
+
+  .ingredient-list-unit{
+    width: 80px;
+    text-align: center;
+    background-color: #414141;
+    border-color: gray;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px; 
+  }
+
+  .ingredient-list-ingredient{
+    width: 100px;
+    text-align: center;
+    background-color: #414141;
+    border-color: gray;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px; 
+  }
+
+  .button-remove{
+    background-color: rgb(252, 95, 95);
+    border-color: rgb(254, 112, 112);
+    text-align: center;
+    margin: 0;
+  }
+
+  .button-add-ingredients{
+    width: 410px;
+    background-color: rgb(154, 149, 159);
+    border-color: rgb(185, 179, 191);
+    margin-left: 45px;
+  }
+
+  .button-add-instructions{
+    width: 84%;
+    background-color: rgb(154, 149, 159);
+    border-color: rgb(189, 182, 195);
+    margin-left: 40px;
+  }
+
+  .instructions-input{
+    width: 90%;
+    text-align: center;
+    background-color: #414141;
+    border-color: gray;
+    color: white;
+    border-radius: 5px;
+    font-size: 17px; 
+    margin-top: 15px;
+  }
+
+  .button-save{
+    background-color: rgb(17, 205, 0);
+    border-color: rgb(17, 205, 0);
+    text-align: center;
+    width: 85%;
+    margin-left: 15px;
+    margin-top: 15px;
+  }
+
+  .button-delete{
+    background-color: rgb(252, 95, 95);
+    border-color: rgb(254, 112, 112);
+    text-align: center;
+  }
+
+  .catagory{
+    text-align: center;
+    color: rgb(178, 178, 178);
+  }
+
+  .recipe-title{
+    text-align: center;
+    background-color: #414141;
+    border-color: gray;
+    color: white;
+    font-size: 17px; 
+    margin-top: 15px;
+
+  }
+
+  .recipe-title-label{
+    text-align: center;
+    font-size: 17px; 
+    margin-left: 20%;
+    color: rgb(178, 178, 178);
+  }
+
+  .recipe-description{
+    text-align: left;
+    background-color: #414141;
+    border-color: gray;
+    color: white;
+    font-size: 17px; 
+    margin-top: 15px;
+    width: 80%;
+
+  }
+
+  .recipe-description-label{
+    text-align: center;
+    font-size: 17px; 
+    margin-left: 10px;
+    color: rgb(178, 178, 178);
+  }

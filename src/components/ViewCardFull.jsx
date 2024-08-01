@@ -1,9 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import CreatePage from "./CreatePage";
-
-const BASE_URL = "https://localhost:5401/api/recipe/";
+import { myConfig } from '../Config'
 
 
 export const ViewCardFull = (props) => {
@@ -15,7 +13,7 @@ export const ViewCardFull = (props) => {
         const fetchPosts = async () => {
     
           try{
-            const response = await fetch(`${BASE_URL}${props.functionCardId}`);
+            const response = await fetch(`${myConfig.apiBaseUrl}${props.valueCardId}`);
             response.json().then(json => {
                 setMyData(json);
               }
@@ -36,6 +34,8 @@ export const ViewCardFull = (props) => {
       }
 
     console.log(myData);
+
+    props.functionCardData(myData);
   
     return (
     <div className="recipeFull">
@@ -49,6 +49,7 @@ export const ViewCardFull = (props) => {
         <ol className="recipeFull-instructionsList">
             {(myData.length == 0)?<li>loading...</li>:(myData.instructions.map((data,index) => {return(<li className="recipeFull-instructionsList-item" key={index}>{data.instruction}</li>)}))}
         </ol>
+        <button className='recipeFull-EditButton' onClick={()=>{props.functionViewState(4)}}>Edit</button>
     </div>
   )
 }

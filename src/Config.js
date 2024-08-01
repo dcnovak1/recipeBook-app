@@ -1,0 +1,1 @@
+export const myConfig = { apiBaseUrl: 'https://localhost:5401/api/recipe/'};
