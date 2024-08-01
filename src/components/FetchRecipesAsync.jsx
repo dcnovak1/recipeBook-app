@@ -9,7 +9,6 @@ const FetchRecipesAsync = (props) =>{
 
 
   const [myData, setMyData] = useState([]);
-
   
   useEffect(() => {
     const fetchPosts = async () => {
@@ -31,10 +30,9 @@ const FetchRecipesAsync = (props) =>{
     fetchPosts();
   }, [])
 
-
   return(
     <main className='RecipesContainer'>
-      {myData.map((data, index) => <div key={index} className='CardContainer'><Card function={props.function} id={data.id} title={data.title} description={data.description} image='https://via.placeholder.com/150'/></div>)}
+      {myData.map((data, index) => <div key={index} className='CardContainer'><Card function={props.function} functionCard={props.functionCard} id={data.id} title={data.title} description={data.description} image='https://via.placeholder.com/150'/></div>)}
     </main>
   );
 }

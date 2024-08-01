@@ -14,13 +14,13 @@ const BASE_URL = "https://jsonplaceholder.typicode.com";
 function App(){
 
   const  [viewState, setViewState] =  useState(0);
+  const [cardId, setCardId] = useState("");
 
 
 
 
   return(
     <div>
-        
         <div className="sidenav">
           <div id="BrowseButton" className="sidenav-button" onClick={() => setViewState(0)}>Browse</div>
           <div id="CreateButton" className="sidenav-button" onClick={() => setViewState(1)}>Create</div>
@@ -29,9 +29,9 @@ function App(){
           <a className="active" href="#home">Recipe Book</a>
         </div> 
         <div className="mainContainer">
-          {(viewState == 0)?<FetchRecipesAsync function={setViewState}/>:<></>}
+          {(viewState == 0)?<FetchRecipesAsync function={setViewState} functionCard={setCardId}/>:<></>}
           {(viewState == 1)?<CreatePage/>:<></>}
-          {(viewState == 3)?<ViewCardFull/>:<></>}
+          {(viewState == 3)?<ViewCardFull functionCardId={cardId}/>:<></>}
         </div>
         
     </div>
