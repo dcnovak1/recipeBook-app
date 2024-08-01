@@ -3,9 +3,8 @@ import FetchRecipes from "./components/FetchRecipes";
 
 import React, { useEffect } from 'react'
 import { useState } from 'react';
-import CreatePage from "./components/CreatePage";
 import { ViewCardFull } from "./components/ViewCardFull";
-import { EditCard } from "./components/EditCard";
+import { CardEditor } from "./components/CardEditor";
 
 const BASE_URL = "https://jsonplaceholder.typicode.com";
 
@@ -28,9 +27,9 @@ function App(){
         </div> 
         <div className="mainContainer">
           {(viewState == 0)?<FetchRecipes functionViewState={setViewState} functionCardId={setCardId}/>:<></>}
-          {(viewState == 1)?<CreatePage/>:<></>}
+          {(viewState == 1)?<CardEditor valueCardId={cardId} functionViewState={setViewState} valueCardData={cardData} valueViewState={viewState}/>:<></>}
           {(viewState == 3)?<ViewCardFull valueCardId={cardId} functionViewState={setViewState} functionCardData={setCardData}/>:<></>}
-          {(viewState == 4)?<EditCard valueCardId={cardId} functionViewState={setViewState} valueCardData={cardData}/>:<></>}
+          {(viewState == 4)?<CardEditor valueCardId={cardId} functionViewState={setViewState} valueCardData={cardData} valueViewState={viewState}/>:<></>}
         </div>
         
     </div>
