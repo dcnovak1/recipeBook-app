@@ -27,7 +27,7 @@ function Item({ingredient, onChange, onDelete }) {
         <label className='ingredient-label'>Quantity: </label>
         <input  className="ingredient-list-quantity"
           value={ingredient.quantity}
-          onChange={e => {onChange({...ingredient,quantity: e.target.value});}} 
+          onChange={e => {if(!isNaN(e.target.value)){onChange({...ingredient,quantity: Number(e.target.value)});}}} 
         />
         <label className='ingredient-label'>Unit: </label>
         <input className="ingredient-list-unit"

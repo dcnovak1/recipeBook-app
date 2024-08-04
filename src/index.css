@@ -1,22 +1,24 @@
+
 .mainContainer{
-    background-color: rgb(82, 82, 82);
+    background-color: #d9d9d9;
+    margin: 0px;
+    margin-left: 130px;
+    padding: 0px, 0px, 0px, 0px;
     size: 100%;
     height: 100vh;
-    margin-left: 150px;
-    margin-top: 25px;
-    margin-right: 10px;
-    border-radius: 10px;
 }
 
 .card{
-    border: 1px solid black;
+
     border-radius: 10px;
-    padding: 20px;
+    padding: 0px;
+    margin: 0px;
     text-align: center;
     overflow: hidden;
-
     height: 250px;
-    display: inline-block;
+    width: 150px;
+    
+    
 }
 
 .card:hover{
@@ -26,23 +28,25 @@
 .CardContainer{
     background-color: #333;
     size: 100px;
-    display: inline-block;
-    margin-left: 2px;
-    margin-top: 2px;
+    display: inline-flex;
+    margin: 2px;
     border-radius: 10px;
+    padding: 1px, 1px, 1px, 1px;
 }
 
-.card .car-image{
-    max-width: 60%;
+.card .card-image{
+    max-width: 80%;
     height: auto;
-    border-radius: 50%;
-    margin-bottom: 5px;
+    margin: 5px;
+    margin-top: 10px;
 }
 
 .card .card-title{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     margin: 0;
+    margin-left: 0;
+    padding-left: 0;
     color: gray;
     white-space: nowrap;
   overflow: hidden;
@@ -56,55 +60,86 @@
     text-overflow: ellipsis;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: #333;
-    overflow: hidden;
-    box-shadow: 5px, 5px, 5px, rgb(0, 0, 0);
-    }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #c6711c;
-    color: white;
-  }
+.Header {
+  background-color: #c6711c;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px 0px, 0px, 0px;
+  border-width: 0px;
+  width: 100%;
+  height: 40px;
+}
 
-  body{
-    background-color: #414141;
-    height: 30px;
-  }
+.Header-Title{
+  padding-left: 1%;
+  font-family: Brush Script MT; 
+  color: white;
+  float: left;
+  margin-top: 3px;
+}
 
+.Header-Text{
+  font-family: Brush Script MT; 
+  float: right;
+  margin-right: 2%;
+  margin-top: 3px;
+  color: white;
+}
+
+.Header-SearchBar{
+  font-family: Arial, Helvetica, sans-serif;
+  float: left;
+  margin-top: 12px;
+  padding-left: 2px;
+  margin-left: 40px;
+}
+
+.Header-Button{
+  float: right;
+  padding: 8px;
+  margin-top: 2px;
+  margin-right: 1%;
+  color:#c6711c;
+  background-color: white;
+  border-radius: 5px;
+  border-color: #d9d9d9;
+}
+
+.Header-Button:hover{
+  color: white;
+  background-color: #c6711c;
+  border-color: #a35d17;
+}
+
+body{
+  margin: 0px;
+  background-color: white;
+  height: 30px;
+}
+
+.SideBar{
+  width: 130px;
+  height: 100vh;
+  margin-top: 0;
+  position: fixed;
+  z-index: 1;
+  background: white;
+  overflow-x: hidden;
+  padding: 0px 0px, 0px, 0px;
+}
+
+.SideBar-Button{
+  padding: 6px 0px 6px 16px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #c6711c;
+  display: block;
+}
   
-.sidenav {
-    width: 130px;
-    position: fixed;
-    z-index: 1;
-    top: 80px;
-    left: 10px;
-    background: #c6711c;
-    overflow-x: hidden;
-    padding: 8px 0;
-  }
-  
-  .sidenav-button {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #f2f2f2;
-    display: block;
-  }
-  
-  .sidenav-button:hover {
+  .SideBar-Button:hover {
     color: #000000;
   }
   
@@ -118,18 +153,6 @@
     color: #c6711c;
     text-align: center;
     padding-top: 10px;
-  }
-  
-  .recipeFull{
-    margin: 20px;
-  }
-
-  .recipeFull-title{
-    text-align: center;
-  }
-
-  .recipeFull-description{
-    text-align: center;
   }
 
   .ingredients-list{
