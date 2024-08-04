@@ -5,6 +5,7 @@ import InstructionsList from '../../components/InstructionsList';
 import { useSearchParams } from 'react-router-dom';
 import { GetOne } from '../../Services/RecipeBookAPI';
 import { DeleteRecipe, UpdateRecipe, PostRecipe } from '../../Services/RecipeBookAPI';
+import { useNavigate } from 'react-router-dom';
 
 // Used to create and edit a recipe
 function emptyRecipe() {
@@ -34,14 +35,15 @@ function emptyRecipe() {
 
 export const CardEditor = (props) => {
 
-    const [searchParams] = useSearchParams();
-    const id = searchParams.get("id");
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get("id");
 
-    const [recipe, setRecipe] = useState(emptyRecipe());
+  const [recipe, setRecipe] = useState(emptyRecipe());
 
-    if(id != undefined){
-      GetOne(id, setRecipe);
-    }
+  if(id != undefined){
+    GetOne(id, setRecipe);
+  }
     
     
   function handleAddInstruction() {
@@ -127,8 +129,8 @@ export const CardEditor = (props) => {
             <InstructionsList myInstructions={recipe.instructions} onChangeInstruction={handleChangeInstruction} onDeleteInstruction={handleDeleteInstruction}/>
             <button className='button-add-instructions' onClick={() => {handleAddInstruction();}}>Add</button>
             <div></div>
-            {(id == undefined)?(<button className="button-save"type="button" onClick={() => PostRecipe(recipe)}>Create</button>):(<button className="button-save"type="button" onClick={() => UpdateRecipe(recipe)}>Update</button>)}
-            {(id == undefined)?<></>:<button className='button-delete' onClick={() => DeleteRecipe(recipe.id)}>Delete</button>}
+            {(id == undefined)?(<button className="button-save"type="button" onClick={() => {PostRecipe(recipe), navigate('/')}}>Create</button>):(<button className="button-save"type="button" onClick={() => UpdateRecipe(recipe)}>Update</button>)}
+            {(id == undefined)?<></>:<button className='button-delete' onClick={() => {DeleteRecipe(recipe.id), navigate('/')}}>Delete</button>}
         </div>
     )
   }

@@ -9,6 +9,7 @@ import Home from "./Pages/Home";
 import { BrowseRecipes } from "./Pages/BrowseRecipes";
 import {Routes, Route} from 'react-router-dom';
 import ViewRecipe from "./Pages/ViewRecipe";
+import Login from "./Pages/Login";
 
 
 function App(){
@@ -29,6 +30,7 @@ function App(){
           <Route path="/BrowseRecipes" element={<BrowseRecipes/>}/>
           <Route path="/ViewRecipe" element={<ViewRecipe/>}/>
           <Route path="/CreateRecipe" element={<CardEditor/>}/>
+          <Route path="/login" element={<Login/>}/>
         </Routes>
         {/* {(viewState == 0)?<FetchRecipes functionViewState={setViewState} functionCardId={setCardId}/>:<></>}
         {(viewState == 1)?<CardEditor valueCardId={cardId} functionViewState={setViewState} valueCardData={cardData} valueViewState={viewState}/>:<></>}
