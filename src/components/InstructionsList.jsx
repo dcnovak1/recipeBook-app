@@ -1,4 +1,3 @@
-import { useState } from 'react';
 
 export default function InstructionsList({
   myInstructions,
@@ -6,7 +5,7 @@ export default function InstructionsList({
   onDeleteInstruction
 }) {
   return (
-    <ul>
+    <ol style={{marginBottom:'6px'}}>
       {myInstructions.map((instruction, index) => (
         <li key={index}>
           <Item
@@ -16,7 +15,7 @@ export default function InstructionsList({
           />
         </li>
       ))}
-    </ul>
+    </ol>
   );
 }
 
@@ -24,7 +23,7 @@ function Item({instruction, onChange, onDelete }) {
   let instructionContent;
   instructionContent = (
       <>
-        <input className='instructions-input'
+        <input style={{width:'310px'}}
           value={instruction.instruction}
           onChange={e => {onChange({...instruction,instruction: e.target.value});}} 
         />
@@ -33,7 +32,7 @@ function Item({instruction, onChange, onDelete }) {
   return (
     <label>
       {instructionContent}
-      <button className="button-remove" onClick={() => onDelete(instruction.ordinalPosition)}>
+      <button className='btn btn-danger btn-sm' style={{marginLeft:'5px'}} onClick={() => onDelete(instruction.ordinalPosition)}>
         x
       </button>
     </label>

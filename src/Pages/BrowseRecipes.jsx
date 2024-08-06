@@ -1,7 +1,8 @@
 import React from 'react'
 import { GetMany } from '../Services/RecipeBookAPI';
 import { useState } from 'react';
-import Card from '../components/Card';
+import RecipeCard from '../components/RecipeCard';
+import { Container} from 'react-bootstrap';
 
 export const BrowseRecipes = () => {
 
@@ -11,8 +12,8 @@ export const BrowseRecipes = () => {
   GetMany(setRecipes, pageDetails.pageSize, pageDetails.pageNumber);
 
   return(
-    <main className='RecipesContainer'>
-      {recipes.map((data, index) => <div key={index} className='CardContainer'><Card id={data.id} title={data.title} description={data.description} image='https://via.placeholder.com/150'/></div>)}
-    </main>
+    <Container style={{margin:'0', padding:'0', display:'flex', flexWrap: 'wrap'}}>
+      {recipes.map((data, index) => <div key={index} className='CardContainer'><RecipeCard id={data.id} title={data.title} description={data.description} image='https://via.placeholder.com/150'/></div>)}
+    </Container>
   );
 }

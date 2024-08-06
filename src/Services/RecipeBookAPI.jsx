@@ -39,7 +39,7 @@ export async function GetMany(setRecipes, pageSize, pageNumber){
     const fetchPosts = async () => {
 
       try{
-        const response = await fetch(`${myConfig.apiBaseUrl}?pageSize${pageSize}&pageNumber${pageNumber}`);
+        const response = await fetch(`${myConfig.apiBaseUrl}?pageSize=${pageSize}&pageNumber=${pageNumber}`);
         response.json().then(json => {
            setRecipes(json);
           }

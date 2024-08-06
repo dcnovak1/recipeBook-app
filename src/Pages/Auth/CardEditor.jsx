@@ -6,6 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 import { GetOne } from '../../Services/RecipeBookAPI';
 import { DeleteRecipe, UpdateRecipe, PostRecipe } from '../../Services/RecipeBookAPI';
 import { useNavigate } from 'react-router-dom';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 
 // Used to create and edit a recipe
 function emptyRecipe() {
@@ -115,23 +116,42 @@ export const CardEditor = (props) => {
     }
     else{
       return (
-        <div className="recipeEdit">
-            <label className='recipe-title-label'>Title:</label>
-            <input className='recipe-title'  type="text"  name="title" value={recipe.title} onChange={(e) => setRecipe({...recipe, title: e.target.value})}/>
-            <div></div>
-            <label className='recipe-description-label'>Description:</label>
-            <input className='recipe-description' type="text"  name="description" value={recipe.description} onChange={(e) => setRecipe({...recipe, description: e.target.value})}/>
+        <Container>
+        <Row>
+            <Col>
 
-            <h1 className="catagory">Ingredients </h1>
-            <IngredientsList myIngredients={recipe.ingredients} onChangeIngredient={handleChangeIngredient} onDeleteIngredient={handleDeleteIngredient}/>
-            <button className='button-add-ingredients' onClick={() => {handleAddIngredient();}}>Add</button>
-            <h1 className="catagory">Instructions </h1>
-            <InstructionsList myInstructions={recipe.instructions} onChangeInstruction={handleChangeInstruction} onDeleteInstruction={handleDeleteInstruction}/>
-            <button className='button-add-instructions' onClick={() => {handleAddInstruction();}}>Add</button>
-            <div></div>
-            {(id == undefined)?(<button className="button-save"type="button" onClick={() => {PostRecipe(recipe), navigate('/')}}>Create</button>):(<button className="button-save"type="button" onClick={() => UpdateRecipe(recipe)}>Update</button>)}
-            {(id == undefined)?<></>:<button className='button-delete' onClick={() => {DeleteRecipe(recipe.id), navigate('/')}}>Delete</button>}
-        </div>
+            </Col>
+            <Col>
+                <Card style={{width:'25rem'}}>
+                    <Card.Img variant="top" style={{padding:'3px'}} src={'https://via.placeholder.com/150'} alt='Food picture'/>
+                    <Card.Body style={{ padding:'0.5rem'}}>
+                        <Card.Title style={{color:'#DC582A'}}>
+                          Title: <input  className='recipe-title'  type="text"  name="title" value={recipe.title} onChange={(e) => setRecipe({...recipe, title: e.target.value})}/>
+                        </Card.Title>
+                        
+                        <Card.Title style={{fontSize: '1rem', color:'#DC582A'}}>
+                          Description: <textarea className='recipe-description' type="text"  name="description" value={recipe.description} onChange={(e) => setRecipe({...recipe, description: e.target.value})}/>
+                        </Card.Title>
+
+                        <Card.Title style={{color:'#DC582A'}}>Ingredients</Card.Title>
+                        <Card.Title style={{fontSize:'1rem', color:'#DC582A'}}><Row style={{marginLeft: '20px'}}><Col>Quantity</Col><Col>Unit</Col><Col>Name</Col></Row></Card.Title>
+                        <IngredientsList myIngredients={recipe.ingredients} onChangeIngredient={handleChangeIngredient} onDeleteIngredient={handleDeleteIngredient}/>
+                        <button className='btn btn-primary' style={{marginLeft:'30px', width:'300px', paddingTop:'0', paddingBottom:'0'}} onClick={() => {handleAddIngredient();}}>+</button>
+
+                        <Card.Title style={{color:'#DC582A'}}>Instructions</Card.Title>
+                        <InstructionsList myInstructions={recipe.instructions} onChangeInstruction={handleChangeInstruction} onDeleteInstruction={handleDeleteInstruction}/>
+                        <button className='btn btn-primary' style={{marginLeft:'30px', width:'300px', marginBottom:'10px', paddingTop:'0', paddingBottom:'0'}} onClick={() => {handleAddInstruction();}}>+</button>
+                        <div></div>
+                        {(id == undefined)?(<button className="btn btn-success"type="button" onClick={() => {PostRecipe(recipe), navigate('/')}}>Create</button>):(<button className="btn btn-success"type="button" onClick={() => UpdateRecipe(recipe)}>Update</button>)}
+                        {(id == undefined)?<></>:<button className='btn btn-danger' style={{float:'right'}} onClick={() => {DeleteRecipe(recipe.id), navigate('/')}}>Delete</button>}
+                    </Card.Body>
+                </Card>
+            </Col>
+            <Col>
+
+            </Col>
+        </Row>
+    </Container>
     )
   }
 }

@@ -1,17 +1,27 @@
 import React from 'react'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 const SideBar = () => {
   return (
-    <div className="SideBar">
-        <a id="HomeButton" href='/' className="SideBar-Button">Home</a>
-        <a id="BrowseButton" href='/BrowseRecipes' className="SideBar-Button">Browse</a>
-        <div id="Popular" className="SideBar-Button">Popular</div>
-        <div id="Categories" className="SideBar-Button">Categories</div>
-        <div id="Search" className="SideBar-Button">Search</div>
-        <div id="Help" className="SideBar-Button">Help</div>
-        <a href='/CreateRecipe' id="CreateButton" className="SideBar-Button">Create</a>
-    </div>
-  )
+    <Container style={{margin:'0', maxWidth:'130px', maxHeight:'100%', height:'100vh'}}>
+      <Navbar>
+        <Nav className="flex-column">
+          <Nav.Link style={{padding:'2px', fontSize:'1.5rem', color:'#F06105'}} href="/">Home</Nav.Link>
+          <Nav.Link style={{padding:'2px', fontSize:'1.5rem', color:'#F06105'}} href="BrowseRecipes">Browse</Nav.Link>
+          <Nav.Link style={{padding:'2px', fontSize:'1.5rem', color:'#F06105'}} href="">Popular</Nav.Link>
+          <Nav.Link style={{padding:'2px', fontSize:'1.5rem', color:'#F06105'}} href="">Catagories</Nav.Link>
+          <Nav.Link style={{padding:'2px', fontSize:'1.5rem', color:'#F06105'}} href="">Search</Nav.Link>
+          <Nav.Link style={{padding:'2px', fontSize:'1.5rem', color:'#F06105'}} href="">Help</Nav.Link>
+          <Nav.Link style={{padding:'2px', fontSize:'1.5rem', color:'#F06105'}} href="CreateRecipe">Create</Nav.Link>
+        </Nav>
+      </Navbar>
+    </Container>
+);
+    
 }
+
+
 
 export default SideBar
